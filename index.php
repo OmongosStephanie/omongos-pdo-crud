@@ -95,7 +95,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <style>
            body {
     font-family: Arial, sans-serif;
-    background-image: url('https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAzL3Jhd3BpeGVsX29mZmljZV81M19hX21pbmltYWxfYW5kX2xlc3NfZGV0YWlsX2lsbHVzdHJhdGlvbl9vZl9jaF8xN2NmMTIxNy1kNDM0LTRjYTYtYjIxYy04ZmQyMjQxMjlkN2EuanBn.jpg');
+    background-image: url('https://gifdb.com/images/high/anime-sakura-tree-background-5z6dmfmn1jlgr932.gif');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -112,7 +112,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     background-color: #fff; /* White background */
     border-radius: 20px;
     box-shadow: 0px 0px 30px rgba(255, 69, 0, 0.7), 0 0 0 4px black; /* Orange shadow and black border */
-    background-image: url('https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAzL3Jhd3BpeGVsX29mZmljZV81M19hX21pbmltYWxfYW5kX2xlc3NfZGV0YWlsX2lsbHVzdHJhdGlvbl9vZl9jaF8xN2NmMTIxNy1kNDM0LTRjYTYtYjIxYy04ZmQyMjQxMjlkN2EuanBn.jpg'); /* Background image */
+    background-image: url('https://gifdb.com/images/high/anime-sakura-tree-background-5z6dmfmn1jlgr932.gif'); /* Background image */
     background-size: cover;
     background-position: center;
 }
