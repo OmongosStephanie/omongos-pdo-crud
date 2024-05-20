@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require_once "../../db/config.php";
+require_once "../db/config.php";
  
 // Define variables and initialize with empty values
 $product_name = $product_details = $product_retail_price = "";
@@ -188,7 +188,7 @@ if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
                         </div>
                         </div>
 
-                        <a href="../user/dashboard.php" class="btn btn-secondary ml-2">Cancel</a>
+                        <a href="../public/dashboard.php" class="btn btn-secondary ml-2">Cancel</a>
                     </form>
                 </div>
             </div>        

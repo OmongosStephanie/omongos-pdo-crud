@@ -3,7 +3,7 @@
 // Process delete operation after confirmation
 if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
     // Include config file
-    require_once "../../db/config.php";
+    require_once "../db/config.php";
     
     // Prepare a delete statement
     $sql = "DELETE FROM products WHERE product_id = :product_id";
@@ -18,7 +18,7 @@ if(isset($_POST["product_id"]) && !empty($_POST["product_id"])){
         // Attempt to execute the prepared statement
         if($stmt->execute()){
             // Records deleted successfully. Redirect to landing page
-            header("location: ../user/dashboard.php");
+            header("location: ../public/dashboard.php");
             exit();
         } else{
             echo "Oops! Something went wrong. Please try again later.";
