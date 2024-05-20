@@ -4,7 +4,7 @@ session_start();
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: ./public/user/dashboard.php");
+    header("location: ./public/dashboard.php");
     exit;
 }
  
@@ -203,7 +203,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <input type="submit" class="btn btn-primary" value="Login" style="color: black;">
 </div>
 
-            <p>Don't have an account? <a href="./public/user/register.php">Sign up now</a>.</p>
+            <p>Don't have an account? <a href="./public/register.php">Sign up now</a>.</p>
         </form>
     </div>
 </body>

@@ -50,11 +50,11 @@ session_start();
                 <div class="col-md-12">
                     <div class="mt-5 mb-3 clearfix">
                         <h2 class="pull-left">Product Details</h2>
-                        <a href="../inventory/create.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
+                        <a href="../public/create.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Product</a>
                     </div>
                     <?php
                     // Include config file
-                    require_once "../../db/config.php";
+                    require_once "./../db/config.php";
                     
                     // Attempt select query execution
                     $sql = "SELECT * FROM products";

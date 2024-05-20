@@ -44,7 +44,7 @@ if(isset($_GET["product_id"]) && !empty(trim($_GET["product_id"]))){
     unset($pdo);
 } else{
     // URL doesn't contain id parameter. Redirect to error page
-    header("location: ../public/error.php");
+    header("location: ../public/user/error.php");
     exit();
 }
 ?>
@@ -80,7 +80,7 @@ if(isset($_GET["product_id"]) && !empty(trim($_GET["product_id"]))){
                         <label>Retail Price</label>
                         <p><b><?php echo $row["product_retail_price"]; ?></b></p>
                     </div>
-                    <p><a href="../public/user/dashboard.php" class="btn btn-primary">Back</a></p>
+                    <p><a href="../user/dashboard.php" class="btn btn-primary">Back</a></p>
 
                 </div>
             </div>        
