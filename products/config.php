@@ -6,9 +6,9 @@ $username = 'root';
 $password = '';
 /*
 define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'u593341949_dev_omongos');
-define('DB_PASSWORD', '20212048Omongos');
-define('DB_NAME', 'u593341949_db_omongos');
+define('DB_USERNAME', 'u593341949_dev_demo');
+define('DB_PASSWORD', 'Admin_demo123');
+define('DB_NAME', 'u593341949_db_demo');
 */
 try {
  $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);

@@ -16,7 +16,6 @@
             width: 80%; /* Set width to 80% */
         }
 
-
         /* Style for individual cards */
         .card {
             width: 100%; /* Ensure cards take full width of their container */
@@ -67,6 +66,27 @@
     <!-- Cart Display Area -->
     <div id="cartContainer"></div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Product Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <!-- Product details will be filled here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a href="admin/payment/payment.php" class="btn btn-primary" id="buyButton">Buy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         fetch('./products/products-api.php')
             .then(response => response.json())
@@ -74,57 +94,51 @@
                 const booksContainer = document.getElementById('productsDisplay');
                 data.forEach(product => {
                     const cardHTML = `
-                    
-
                     <div class="card" style="width: 18rem;">
                         <img class="card-img-top" src="${product.img}">
                             <div class="card-body">
                                 <h5 class="card-title">${product.title}</h5><br>Price: ₱${product.rrp}<br>
                                 <p class="card-text">${product.description}.</p>
                                 <p class="card-text"<br>Quantity: ${product.quantity}</p>
-                                 <button class="btn btn-success" onclick="addToCart(${product.id})">
+                                 <button class="btn btn-success" onclick="showProductModal('${product.title}', '${product.rrp}')">
                                     <i class="fas fa-cart-plus"></i> <!-- Add to Cart icon -->
-                                Add to Cart
-                            </button>
+                                    Add to Cart
+                                </button>
                             </div>
                     </div>
-
                     `;
                     booksContainer.innerHTML += cardHTML;
                 });
             })
             .catch(error => console.error('Error:', error));
 
+        // Function to display the product modal
+        function showProductModal(title, price) {
+            document.getElementById('modalBody').innerHTML = `
+                <p>Name: ${title}</p>
+                <p>Price: ₱${price}</p>
+            `;
+            $('#productModal').modal('show');
+        }
+
+        // Initialize cart object
+        let cart = {};
+
         // Function to add a product to the cart
         function addToCart(productId) {
-            // Here, you can implement your logic to add the product with the given ID to the cart
-            console.log(`Product with ID ${productId} added to cart`);
-            // For example, you can send an AJAX request to your server to update the cart
+            // Add the product to the cart
+            if (cart[productId]) {
+                cart[productId]++;
+            } else {
+                cart[productId] = 1;
+            }
+            // Display the updated cart
+            displayCart();
         }
 
         // Function to display the cart with the items added and deduct the values from the quantity data field
         function displayCart() {
-            // Here, you can implement the logic to display the cart with the items added and update the quantity data field
-        }
-
-        // Initialize cart object
-    let cart = {};
-
-    // Function to add a product to the cart
-    function addToCart(productId) {
-        // Add the product to the cart
-        if (cart[productId]) {
-            cart[productId]++;
-        } else {
-            cart[productId] = 1;
-        }
-        // Display the updated cart
-        displayCart();
-    }
-
-    // Function to display the cart with the items added and deduct the values from the quantity data field
-    function displayCart() {
-        const cartContainer = document.getElementById('cartContainer');
+            const cartContainer = document.getElementById('cartContainer');
             let cartHTML = '<h3>Cart</h3>';
             // Iterate over the cart items and display them
             for (const [productId, quantity] of Object.entries(cart)) {
@@ -133,8 +147,10 @@
             }
             // Update the cart display
             cartContainer.innerHTML = cartHTML;
-    }
-
+        }
     </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
