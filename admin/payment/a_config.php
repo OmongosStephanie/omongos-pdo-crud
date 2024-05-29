@@ -1,9 +1,15 @@
 <?php
 // Database configuration using PDO
+/*
 $servername = "localhost";
 $username = "root";
 $password = "";
 $database = "luna";
+*/
+$servername = "localhost";
+$username = "u593341949_dev_omongos";
+$password = "20212048Omongos";
+$database = "u593341949_db_omongos";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);

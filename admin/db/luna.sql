@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2024 at 10:27 AM
+-- Generation Time: May 29, 2024 at 07:35 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -43,7 +43,8 @@ CREATE TABLE `addresses` (
 
 INSERT INTO `addresses` (`id`, `street_address`, `city`, `state`, `postal_code`, `country`, `created_at`) VALUES
 (1, '', '', '', '', '', '2024-05-27 07:08:03'),
-(2, '', '', '', '', '', '2024-05-27 07:08:06');
+(2, '', '', '', '', '', '2024-05-27 07:08:06'),
+(3, 'lingon', 'none', 'mindanao', '2322', 'phillipines', '2024-05-29 05:29:54');
 
 -- --------------------------------------------------------
 
@@ -64,7 +65,8 @@ CREATE TABLE `payments` (
 --
 
 INSERT INTO `payments` (`id`, `product_name`, `price`, `payment_method`, `created_at`) VALUES
-(1, '', 0.00, 'PayMaya', '2024-05-27 08:22:34');
+(1, '', 0.00, 'PayMaya', '2024-05-27 08:22:34'),
+(2, 'after', 20.00, 'PayMaya', '2024-05-29 05:29:42');
 
 -- --------------------------------------------------------
 
@@ -88,11 +90,12 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `title`, `description`, `price`, `rrp`, `quantity`, `img`, `date_added`) VALUES
-(1, 'Samsung Galaxy S21', 'A flagship smartphone with top-of-the-line features and performance.', 999, 1099, 50, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLMldiRNXMhRlkX_xmE5b-EODnf_uhHr9CZFBm19-x0g&s', '2024-05-08 00:00:00'),
-(2, 'Apple iPhone 13', 'The latest iPhone model with improved camera capabilities and faster performance.', 1099, 1199, 30, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfHX3kahPoaVBRHEGudTAcb5X2f7v4xHQ7GtN9h8GtLQ&s', '2024-05-08 00:00:00'),
-(3, 'OnePlus 9 Pro', 'A high-performance Android smartphone with a smooth 120Hz display and fast charging.', 899, 999, 40, 'https://upload.wikimedia.org/wikipedia/commons/b/b3/OnePlus_9_Pro_Camera_Module_with_Hasselblad_logo.jpg', '2024-05-08 00:00:00'),
-(4, 'Xiaomi Redmi Note 11', 'A budget-friendly smartphone with a large display and long-lasting battery life.', 299, 349, 60, 'https://www.dpreview.com/files/p/articles/7450305057/Redmi_Note_1.jpeg', '2024-05-08 00:00:00'),
-(5, 'Google Pixel 6', 'A camera-centric smartphone with advanced AI features and a sleek design.', 799, 899, 20, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjxzPmT5uqJ5NHvgNPlAPQmUNcUk7xPrqDRq8jP_zCBg&s', '2024-05-08 00:00:00');
+(1, 'She\\\'s Dating the Gangster', 'A romance novel about a girl who falls in love with a bad boy', 10, 15, 50, 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1413999604i/23435902.jpg', '2024-05-08 00:00:00'),
+(2, 'The Bad Boy\\\'s Girl', 'A story about a girl who gets involved with the school\\\'s bad boy.', 12, 18, 30, 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1483481562i/33788075.jpg', '2024-05-08 00:00:00'),
+(3, 'My Life with the Walter Boys', 'A girl moves in with a large family of boys and experiences new adventures.', 11, 16, 40, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9Kd9VCauLdBzRBfZvOtLbcVg_Kkz6HHqlMg&s', '2024-05-08 00:00:00'),
+(4, 'Chasing Red', 'A tale of love, passion, and heartbreak as a girl navigates college life.', 14, 20, 60, 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1503953648i/34351047.jpg', '2024-05-08 00:00:00'),
+(5, 'After', 'A series following the intense and tumultuous relationship between two college students.', 15, 22, 20, 'https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781982111007/after-9781982111007_hr.jpg', '2024-05-08 00:00:00'),
+(6, 'The Deal', 'A college romance where a hockey player and a shy girl make a deal that changes everything.', 13, 19, 25, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkf-TaaMtbl_jezn10ylYGAsy0MPq4lTlw6Q&s', '2024-05-29 13:21:49');
 
 -- --------------------------------------------------------
 
@@ -151,19 +154,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `addresses`
 --
 ALTER TABLE `addresses`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
